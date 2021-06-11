@@ -71,10 +71,42 @@ public class TarefaAtividade2Unid5 {
         btnExibir.setBounds(170, 70, 90, 20);
         tela.add(btnExibir);
 
-        
-        
-        
-        
+        btnLimpar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String nome;
+                String pergunta;
+
+                nome = tfdNome.getText();
+                pergunta = tfdPergunta.getText();
+
+                //JOptionPane.showMessageDialog(null,nome + pergunta );
+                if (nome.equalsIgnoreCase("") && pergunta.equalsIgnoreCase("")) {
+                    JOptionPane.showMessageDialog(null, "Campos Limpos!");
+                } else {
+                    tfdNome.setText("");
+                    tfdPergunta.setText("");
+                }
+            }
+        });
+
+        btnExibir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String nome;
+                String pergunta;
+
+                nome = tfdNome.getText();
+                pergunta = tfdPergunta.getText();
+                
+                JOptionPane.showMessageDialog(null, "Cliente: " + nome + "\n" 
+                        + "Você confirma o depósito de: R$ " + pergunta );
+
+            }
+        });
+
     }
 
 }
