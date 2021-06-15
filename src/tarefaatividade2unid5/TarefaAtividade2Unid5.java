@@ -101,12 +101,15 @@ public class TarefaAtividade2Unid5 {
                 nome = tfdNome.getText();
                 pergunta = tfdPergunta.getText();
                 
-                JOptionPane.showMessageDialog(null, "Cliente: " + nome + "\n" 
-                        + "Você confirma o depósito de: R$ " + pergunta );
+
+                if (nome.equalsIgnoreCase("") || pergunta.equalsIgnoreCase("")) {
+                    JOptionPane.showMessageDialog(null, "Dados Incompletos!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Cliente: " + nome + "\n"
+                            + "Você confirma o depósito de: R$ " + pergunta);
+                }
 
             }
         });
-
     }
-
 }
